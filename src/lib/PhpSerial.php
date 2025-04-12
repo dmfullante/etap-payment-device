@@ -1,4 +1,5 @@
 <?php
+
 namespace Etap\FmtVending\lib;
 
 define("SERIAL_DEVICE_NOTSET", 0);

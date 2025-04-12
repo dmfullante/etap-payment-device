@@ -1,10 +1,10 @@
 {
-    "name": "etap/fmtvending",
-    "description": "Initial ETAP FMT Vending Library",
+    "name": "etap/etap-fmt-vending",
+    "description": "Initial ETAP FMT Vending Library use to communicate to device using Serial Port",
     "type": "library",
     "autoload": {
         "psr-4": {
-            "Etap\\FmtVending\\": "src/"
+            "Etap\\EtapFmtVending\\": "src/"
         }
     },
     "authors": [
