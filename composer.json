@@ -1,0 +1,17 @@
+{
+    "name": "etap/fmtvending",
+    "description": "Initial ETAP FMT Vending Library",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Etap\\FmtVending\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "dave martin fullante",
+            "email": "davemartin.fullante@etapinc.com"
+        }
+    ],
+    "require": {}
+}
