@@ -1,8 +1,8 @@
 <?php
-namespace Etap\FmtVending;
+namespace Etapdmf\PhpFmtVending;
 
-use Etap\FmtVending\lib\PhpSerial;
-use Etap\FmtVending\lib\Helper;
+use Etapdmf\PhpFmtVending\lib\PhpSerial;
+use Etapdmf\PhpFmtVending\lib\Helper;
 use Exception;
 
 class Controller

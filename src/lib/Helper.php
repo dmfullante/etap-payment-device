@@ -1,5 +1,5 @@
 <?php
-namespace Etap\FmtVending\lib;
+namespace Etapdmf\PhpFmtVending\lib;
 
 class Helper
 {
