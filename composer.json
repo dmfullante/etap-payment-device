@@ -1,10 +1,10 @@
 {
-    "name": "etap/etap-fmt-vending",
-    "description": "Initial ETAP FMT Vending Library use to communicate to device using Serial Port",
+    "name": "dmf/php-fmt-vending",
+    "description": "Initial FMT Vending Library use to communicate to device using Serial Port",
     "type": "library",
     "autoload": {
         "psr-4": {
-            "Etap\\EtapFmtVending\\": "src/"
+            "Dmf\\PhpFmtVending\\": "src/"
         }
     },
     "authors": [
