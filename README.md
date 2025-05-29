@@ -1,4 +1,4 @@
-# ETAP FMT Vending
+# ETAP Payment Device Library
 
 A PHP package developed by **ETAP INC** for communicating with vending devices over a serial port.
 
