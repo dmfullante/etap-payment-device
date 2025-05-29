@@ -1,6 +1,6 @@
 <?php
 
-namespace Etapdmf\PhpFmtVending\lib;
+namespace Etapdmf\PhpPaymentDevice\lib;
 
 define("SERIAL_DEVICE_NOTSET", 0);
 define("SERIAL_DEVICE_SET", 1);

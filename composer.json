@@ -1,10 +1,10 @@
 {
-    "name": "etapdmf/php-fmt-vending",
-    "description": "Initial FMT Vending Library use to communicate to device using Serial Port",
+    "name": "etapdmf/php-payment-device",
+    "description": "Initial Payment Device Library use to communicate to device using Serial Port",
     "type": "library",
     "autoload": {
         "psr-4": {
-            "Etapdmf\\PhpFmtVending\\": "src/"
+            "Etapdmf\\PhpPaymentDevice\\": "src/"
         }
     },
     "authors": [

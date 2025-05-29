@@ -1,8 +1,8 @@
 <?php
-namespace Etapdmf\PhpFmtVending;
+namespace Etapdmf\PhpPaymentDevice;
 
-use Etapdmf\PhpFmtVending\lib\PhpSerial;
-use Etapdmf\PhpFmtVending\lib\Helper;
+use Etapdmf\PhpPaymentDevice\lib\PhpSerial;
+use Etapdmf\PhpPaymentDevice\lib\Helper;
 use Exception;
 
 class Controller

@@ -1,5 +1,5 @@
 <?php
-namespace Etapdmf\PhpFmtVending\lib;
+namespace Etapdmf\PhpPaymentDevice\lib;
 
 class Helper
 {
