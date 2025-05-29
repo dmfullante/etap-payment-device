@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'fmt' => [
+    'payment' => [
         'device' => '/dev/ttyS0',
         'read_timeout' => 10,
         'baudrate' => 115200,

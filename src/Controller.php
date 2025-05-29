@@ -41,24 +41,24 @@ class Controller
             // First we must specify the device. This works on both linux and windows (if
             // your linux serial device is /dev/ttyS0 for COM1, etc)
             $this->serial->deviceSet(
-                $this->env('FMT_VENDING_PORT') ?? $this->config['fmt']['device']
+                $this->env('PAYMENT_DEVICE_PORT') ?? $this->config['payment']['device']
             );
 
             // We can change the baud rate, parity, length, stop bits, flow control
             $this->serial->confBaudRate(
-                $this->env('FMT_VENDING_BAUDRATE') ?? $this->config['fmt']['baudrate']
+                $this->env('PAYMENT_DEVICE_BAUDRATE') ?? $this->config['payment']['baudrate']
             );
             $this->serial->confParity(
-                $this->env('FMT_VENDING_PARITY') ?? $this->config['fmt']['parity']
+                $this->env('PAYMENT_DEVICE_PARITY') ?? $this->config['payment']['parity']
             );
             $this->serial->confCharacterLength(
-                $this->env('FMT_VENDING_CHAR_LENGTH') ?? $this->config['fmt']['character_length']
+                $this->env('PAYMENT_DEVICE_CHAR_LENGTH') ?? $this->config['payment']['character_length']
             );
             $this->serial->confStopBits(
-                $this->env('FMT_VENDING_STOP_BITS') ?? $this->config['fmt']['stop_bits']
+                $this->env('PAYMENT_DEVICE_STOP_BITS') ?? $this->config['payment']['stop_bits']
             );
             $this->serial->confFlowControl(
-                $this->env('FMT_VENDING_FLOW_CONTROL') ?? $this->config['fmt']['flow_control']
+                $this->env('PAYMENT_DEVICE_FLOW_CONTROL') ?? $this->config['payment']['flow_control']
             );
 
             // Then we need to open it
@@ -102,9 +102,7 @@ class Controller
         try {
             $this->initialize();
 
-            $message = preg_replace('/ /', "", $this->command[$cmd]);
-            $this->log($message);
-            $message = pack("H*", $message);
+            $message = $cmd;
             $this->serial->sendMessage($message);
             sleep(5);
 
@@ -142,45 +140,6 @@ class Controller
                 'status' => false,
                 'error' => $err->getMessage()
             ];
-        }
-    }
-
-    /**
-     * Dispenses an item based on the given row number.
-     *
-     *
-     * @param int $row_num The row number representing the item to be dispensed. Defaults to 0.
-     *
-     * @return bool Returns `false` if the row number is invalid, otherwise proceeds with dispensing.
-     */
-    public function dispense($row_num = 1)
-    {
-        try {
-            $dispense_cmds = [
-                '1' => "PRODUCT_DISPEN_PRODUCT_ID_00_DISPEN_MODE_2",
-                '2' => "PRODUCT_DISPEN_PRODUCT_ID_01_DISPEN_MODE_2",
-                '3' => "PRODUCT_DISPEN_PRODUCT_ID_02_DISPEN_MODE_2",
-                '4' => "PRODUCT_DISPEN_PRODUCT_ID_03_DISPEN_MODE_2",
-                '5' => "PRODUCT_DISPEN_PRODUCT_ID_04_DISPEN_MODE_2"
-            ];
-            
-            $cmd = $dispense_cmds[$row_num];
-            $res = $this->sendRequest($cmd);
-
-            if ($res['status'] == false) {
-                throw new \Exception($res['error'] ?? 'Error occured upon dispense');
-            }
-
-            return [
-                'status' => true,
-                'data' => $res
-            ];
-        } catch (\Exception $err) {
-            return [
-                'status' => false,
-                'error' => $err->getMessage()
-            ];
-            $this->log($err->getMessage());
         }
     }
 
